@@ -1,0 +1,25 @@
+<div class="container col-6  rounded my-5 p-5 bg-dark text-light">
+    <div class="row">
+        <div class=" col-12 col-md-12 col-sm-12 m-auto">
+            <form action="" [formGroup]="unlock">
+                <div class="email">
+                    <label for=""  class="form-label">Email Id</label>
+                    <input placeholder="Enter email Id" formControlName="email" type="email" class="form-control">
+                </div>
+                <div class="tp">
+                    <label for="" class="form-label">Temparary Password</label>
+                    <input type="text" class="form-control" name="tempPwd" formControlName="tempPwd">
+                </div>
+                <div class="cp">
+                    <label for="" class="form-label">Choose New Password</label>
+                    <input type="text" formControlName="newPwd" class="form-control">
+                </div>
+                <div class="confirmpass">
+                    <label for="" class="form-label">Confirm Your Password</label>
+                    <input type="text" class="form-control" formControlName="confirmPwd">
+                </div>
+                <button (click)="unlockAcc()" class="btn btn-success mt-3"> Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

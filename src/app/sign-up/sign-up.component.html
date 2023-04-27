@@ -1,0 +1,115 @@
+<section class="bg-secondary m-0">
+    <div class="container m-3 pt-3 pb-3 mx-auto ">
+      <div class="row">
+        <form [formGroup]="regForm" >
+
+          <!-- <div class="row d-flex flex-wrap   ">
+            <div class="col-6 bg-danger">
+              one
+            </div>
+            <div class="col-6 bg-dark">
+              two
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-12 bg-primary">
+              three
+            </div>
+          </div>  -->
+          
+
+
+
+        <div class="col-12 col-sm-12  col-md-12  mx-auto ">
+            <div class="card-body d-flex flex-column  align-items-center my-2 ">
+                  <div class="form row rounded p-3  " style="background-color: rgb(196, 209, 221);">
+                    <h1 class=" mb-2 text-primary text-center">Registration Form </h1>
+                    <hr>
+                    <h5 class="text-danger">*Personal Details </h5>
+                    <hr>
+                    <div class="col-12 col-sm-12   col-md-6 m-auto">
+                        <label for="fname" class="form-label ">First Name</label>
+                        <input type="text" class="form-control" formControlName="fname" id="firstName">
+
+                        <label for="lname" class="form-label ">Last Name</label>
+                        <input type="text" formControlName="lname" class="form-control" id="">
+                      
+                        <label for="gender" class="form-label ">Gender</label> <br>
+                      <div class=" rounded p-1">
+                        <input type="radio"name="gender" formControlName="gender" class="" id="" value="male">
+                        <label   class="form-label me-5 ">Male</label>
+                        <input value="female" type="radio" name="gender" formControlName="gender" class="" id="">
+                        <label   class="form-label ">Female</label>
+                    
+                      </div>
+                      </div>
+                      
+                      
+                      
+                      <div class="col-12 col-sm-12  col-md-6 m-auto">
+                      
+                      <label for="dob" class="form-label ">Date Of Birth</label>
+                      <input type="date" formControlName="dob" class="form-control" id="">
+                       
+                      <label for="email" class="form-label ">Email Id</label>
+                      <input type="text" class="form-control" formControlName="email" id="">
+                      
+                        <label for="contact" class="form-label ">Phone Number</label>
+                        <input type="text" formControlName="phno" class="form-control" id="">
+
+                       
+                    </div>
+                    
+                    <hr class="my-2">
+                    <h5 class="text-danger">*Address Details </h5>
+                    <hr>
+                   
+                    
+                    <div class="address col-12 col-sm-12 flex-wrap justify-content-evenly col-sm-12 col-md-12 d-flex m-auto">
+                       <div class="mt-3 col-12 col-md-4" >
+                            <select formControlName="countryId" class="form-select " aria-label="Default select example" (change)="statesbyid($any($event.target).value)">
+                              <option [defaultSelected]="'countryId'">Select Your Country</option>
+                              <option *ngFor="let c of country|keyvalue" [value]="c.key">{{c.value}}</option>
+                              
+                            
+                            </select>
+                          </div>
+                          <div class="mt-3  col-12 col-md-4">
+                                 <select formControlName="stateId" class="form-select " aria-label="Default select example" (change)="getcitybyid($any($event.target).value)">
+                              <option  *ngFor="let s of states|keyvalue" [value]="s.key"  >{{s.value}}</option>
+                             
+                            </select>
+                          </div> 
+                           
+
+                          <div class="mt-3  col-12 col-md-4" >
+                        <select formControlName="cityId" class="form-select" aria-label="Default select example" >
+                              <option   [defaultSelected]="'cityId'" *ngFor="let p of city|keyvalue" [value]="p.key" >{{p.value}}</option>
+                              
+                            </select>
+                          
+                          </div>
+                       
+                   
+                  </div>
+                   
+                 
+                    <div class="col-md-12 col-sm-12 d-flex flex-wrap justify-content-evenly ">
+                      <button type="reset" class="col-5 col-md-5 btn col-sm-12  btn-primary my-4 pb-2 rounded">Reset</button> 
+                      <button type="submit" class="col-5 col-md-5 btn col-sm-12  btn-success m-4 pb-2 rounded" (click)="submit()">Register</button>
+                    </div>
+                    
+                 
+                      
+                  </div>
+
+  
+  
+                </div>
+              </div>
+            </form>
+        </div>
+      </div>
+   
+  </section>
